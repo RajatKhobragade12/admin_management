@@ -103,27 +103,8 @@ const updateMiniAdmin = async (req, res) => {
 
 const search =  async (req, res) => {
     try {
-      const { search, tab, sortField, sortOrder, page = 1, limit = 10 } = req.query;
+      const { search, sortField, sortOrder, page = 1, limit = 10 } = req.query;
       const query = {};
-  
-      // Filter by tab
-      // switch (tab) {
-      //   case 'MiniAdmin Master':
-      //     query.code = /^MA/;
-      //     break;
-      //   case 'Master Master':
-      //     query.code = /^MM/;
-      //     break;
-      //   case 'Super Agent Master':
-      //     query.code = /^SAM/;
-      //     break;
-      //   case 'Agent Master':
-      //     query.code = /^AM/;
-      //     break;
-      //   case 'Client Master':
-      //     query.code = /^CM/;
-      //     break;
-      // }
   
       if (search) {
         query.$or = [
